@@ -1,7 +1,7 @@
 {
-  "name": "fuzzycoin",
+  "name": "hashnodetestcrowdsale",
   "version": "1.0.0",
-  "description": "We test our coin so that you can trust that it works.",
+  "description": "",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
@@ -9,17 +9,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ThomasLee94/fuzzy_coin.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ThomasLee94/fuzzy_coin/issues"
-  },
-  "homepage": "https://github.com/ThomasLee94/fuzzy_coin#readme",
   "dependencies": {
-    "openzeppelin-solidity": "^2.3.0"
+    "truffle-hdwallet-provider": "0.0.3",
+    "zeppelin-solidity": "1.5.0"
   }
 }

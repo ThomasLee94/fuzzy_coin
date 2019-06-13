@@ -1,7 +1,6 @@
-pragma solidity ^0.5.0;
+pragma solidity ^0.4.18;
 
-import 'openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol';
-import 'openzeppelin-solidity/contracts/token/ERC721/ERC721Mintable.sol';
+import 'zeppelin-solidity/contracts/token/MintableToken.sol';
 
 contract HashnodeToken is MintableToken {
   string public name = "Hashnode Token";
