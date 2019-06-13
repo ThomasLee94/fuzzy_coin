@@ -1,4 +1,4 @@
-pragma solidity ^0.4.10;
+pragma solidity ^0.5.8;
 
 contract fuzzyToken {
 
@@ -20,8 +20,7 @@ contract fuzzyToken {
   // Owner of account approves the transfer of an amount to another account
   mapping(address => mapping (address => uint256)) allowed;
 
-  // Constructor
-  function fuzzyToken() {
+  constructor() {
       name = "Fuzzy Token";
       symbol = "FZYT";
       decimals = 10;
@@ -34,7 +33,7 @@ contract fuzzyToken {
       totalSupply += initialBalance;
   }
 
-  function balanceOf(address _owner) private constant returns (uint256 balance) {
+  function balanceOf(address _owner) private view returns (uint256 balance) {
       return balances[_owner];
   }
 
