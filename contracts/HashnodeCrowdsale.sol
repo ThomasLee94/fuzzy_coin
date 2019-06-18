@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.5.8;
 
 import './HashnodeToken.sol';
 import 'zeppelin-solidity/contracts/crowdsale/CappedCrowdsale.sol';
@@ -109,11 +109,9 @@ contract HashnodeCrowdsale is CappedCrowdsale, RefundableCrowdsale {
   // ====================================================================
 
   function finish(address _teamFund, address _ecosystemFund, address _bountyFund) public onlyOwner {
-      
       require(!isFinalized);
       uint256 alreadyMinted = token.totalSupply();
       require(alreadyMinted < maxTokens);
-      
       uint256 unsoldTokens = totalTokensForSale - alreadyMinted;
       if (unsoldTokens > 0) {
         tokensForEcosystem = tokensForEcosystem + unsoldTokens;
