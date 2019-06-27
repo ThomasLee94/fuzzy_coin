@@ -1,4 +1,4 @@
-const FuzzyCoin = artifacts.require("./FuzzyCoin.sol");
+const FuzzyCoin = artifacts.require("FuzzyCoin.sol");
 
 const fuzzyCoinSettings = {
     _totalSupply: 1000000
