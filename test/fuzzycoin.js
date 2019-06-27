@@ -1,7 +1,7 @@
 const FuzzyCoin = artifacts.require("FuzzyCoin");
 
 contract('FuzzyCoin', (accounts) => {
-  it('should put 10000 FuzzyCoin in the first account', async () => {
+  it('should put 10000 FuzzyCoins in the first account', async () => {
     const FuzzyCoinInstance = await FuzzyCoin.deployed();
     const balance = await FuzzyCoinInstance.getBalance.call(accounts[0]);
 

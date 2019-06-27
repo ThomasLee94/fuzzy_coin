@@ -1,25 +1,26 @@
-pragma solidity ^0.5.8;
+// pragma solidity >= 0.4.21 < 0.6.0;
 
-import "truffle/Assert.sol";
-import "truffle/DeployedAddresses.sol";
-import "../contracts/FuzzyCoin.sol";
 
-contract TestFuzzycoin {
+// import "truffle/Assert.sol";
+// import "truffle/DeployedAddresses.sol";
+// import "../contracts/FuzzyCoin.sol";
 
-  function testInitialBalanceUsingDeployedContract() public {
-    FuzzyCoin meta = FuzzyCoin(DeployedAddresses.FuzzyCoin());
+// contract TestFuzzycoin {
 
-    uint expected = 10000;
+//   function testInitialBalanceUsingDeployedContract() public {
+//     FuzzyCoin meta = FuzzyCoin(DeployedAddresses.FuzzyCoin());
 
-    Assert.equal(meta.getBalance(tx.origin), expected, "Owner should have 10000 FuzzyCoin initially");
-  }
+//     uint expected = 10000;
 
-  function testInitialBalanceWithNewMetaCoin() public {
-    FuzzyCoin meta = new FuzzyCoin();
+//     Assert.equal(meta.getBalance(tx.origin), expected, "Owner should have 10000 FuzzyCoin initially");
+//   }
 
-    uint expected = 10000;
+//   function testInitialBalanceWithNewMetaCoin() public {
+//     FuzzyCoin meta = new FuzzyCoin();
 
-    Assert.equal(meta.getBalance(tx.origin), expected, "Owner should have 10000 FuzzyCoin initially");
-  }
+//     uint expected = 10000;
 
-}
+//     Assert.equal(meta.getBalance(tx.origin), expected, "Owner should have 10000 FuzzyCoin initially");
+//   }
+
+// }
