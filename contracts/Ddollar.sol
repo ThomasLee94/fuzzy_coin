@@ -8,6 +8,7 @@ contract FuzzyCoin {
   uint8 public constant decimals = 18;
   uint256 _totalSupply = 1000000;
 
+  // Should balances be public?
 	mapping (address => uint) balances;
   mapping (address => mapping (address => uint256)) allowed;
 
@@ -88,5 +89,24 @@ contract FuzzyCoin {
 
     return true;
   }
+
+  /**
+     * Creates `amount` tokens and assigns them to `account`, increasing
+     * the total supply.
+     *
+     * Emits a `Transfer` event with `from` set to the zero address.
+     *
+     * Requirements
+     *
+     * - `to` cannot be the zero address.
+     * - WILL BE USED FOR TESTING PURPOSES
+     */
+  function _mint(address account, uint256 amount) internal {
+        require(account != address(0), "ERC20: mint to the zero address");
+
+        _totalSupply = _totalSupply.add(amount);
+        balances[account] = balances[account].add(amount);
+        emit Transfer(address(0), account, amount);
+    }
 
 }
