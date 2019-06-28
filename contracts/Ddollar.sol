@@ -14,6 +14,8 @@ contract FuzzyCoin {
   // Should balances be public?
 	mapping (address => uint) balances;
   mapping (address => mapping (address => uint256)) allowed;
+  mapping (address => string) username;
+  mapping (string => address) adresses;
 
   event Transfer(address indexed from, address indexed to, uint256 tokens);
   event Approval(address indexed owner, address indexed spender, uint tokens);

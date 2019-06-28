@@ -91,7 +91,6 @@ contract('DDollar', async function (accounts) {
       
     });
 
-
     // TRANSFER WITH APPROVALS & ALLOWANCES
 
     it('TRANSFER: Should allow the withdrawal from a 3rd party account', async () => {
