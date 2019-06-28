@@ -1,7 +1,11 @@
 pragma solidity >= 0.4.21 < 0.6.0;
 
+import "./math/SafeMath.sol";
+
 
 contract FuzzyCoin {
+
+  using SafeMath for uint256;
 
   string public constant name = "Ddollar";
   string public constant symbol = "DDLR";
