@@ -3,8 +3,8 @@ pragma solidity >= 0.4.21 < 0.6.0;
 
 contract FuzzyCoin {
 
-  string public constant name = "Fuzzy Coin";
-  string public constant symbol = "FZYC";
+  string public constant name = "Ddollar";
+  string public constant symbol = "DDLR";
   uint8 public constant decimals = 18;
   uint256 _totalSupply = 1000000;
 
