@@ -1,13 +1,9 @@
 
 const Ddollar = artifacts.require("FuzzyCoin.sol");
 // Courtesy of @maurelian
-const { assertRevert } = require('../helper/assertRevert');
+const { assertRevert } = require('./helper/assertRevert');
 
 let ddollarInstance;
-
-let mockAccount = {
-  address: 1234
-}
 
 contract('DDollar', async function (accounts) {
 
@@ -44,11 +40,15 @@ contract('DDollar', async function (accounts) {
     });
 
     it('BALANCE: should return the balance of tokens at a given public address', async () => {
-      let balance = await ddollarInstance.balanceOf(accounts[0]);
-      
+      const mockAddress = 1234;
+      const mockAmount = 20;
+      await ddollarInstance._mint(mockAddress, mockAmount);
+      const balance = await ddollarInstance.balanceOf()
+
       assert(
-        balance === 1000000
+        balance === mockAmount
       )
+      
     });
 
     it('TRANSFERS: should transfer 10000 to accounts[1] from accounts[0] containing 10000', async () => {
