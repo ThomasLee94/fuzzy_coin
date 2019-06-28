@@ -1,4 +1,4 @@
-abi = JSON.parse('{"constant": true,"inputs": [],"name": "name","outputs": [{"name": "","type": "string"}],"payable": false,"stateMutability": "view","type": "function"}');
+import { abi } from "abi.js";
 
 provider = new ethers.providers.Web3Provider(web3.currentProvider);
 
