@@ -11,11 +11,12 @@ contract FuzzyCoin {
   uint8 public constant decimals = 18;
   uint256 _totalSupply = 1000000;
 
-  // Should balances be public?
+  // TODO: Should balances be public?
 	mapping (address => uint) balances;
   mapping (address => mapping (address => uint256)) allowed;
   mapping (address => string) username;
   mapping (string => address) adresses;
+  // TODO: transaction history? 
 
   event Transfer(address indexed from, address indexed to, uint256 tokens);
   event Approval(address indexed owner, address indexed spender, uint tokens);
