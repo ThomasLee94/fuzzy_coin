@@ -11,13 +11,15 @@ contract('DDollar', async function (accounts) {
     (async () => {
       try {
         // Deploy Ddollar.sol
+        let ddollarInstance = await Ddollar.new("Ddollar", "DDLR");
         ddollarInstance = await Ddollar.deployed();
+        console.log('hi')
         done()
       } catch (error){
         console.log(error);
         done(false)
       }
-    })
+    })();
   })
   
   describe("Ddollar.sol", function () {
