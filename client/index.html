@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>DDollar</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary pr-0">
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#sidebar"
+      aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars"></i>
+    </button>
+    <button class="btn text-white btn-lg" id="new-payment-btn"><i class="fa fa-pencil-square-o"></i></button>
+
+    <!-- SIDEBAR -->
+    <div class="collapse navbar-collapse" id="sidebar">
+      <div class="img-container bg-light">
+        <img src="" alt="" class="profile">
+        <h3 id="user-name">Ikey Benzaken</h3>
+        <h4 class="text-muted" id="user-id">@ikey-benzaken</h4>
+      </div>
+      <div class="container d-flex justify-content-between pt-3">
+        <p class="text-muted" id="user-balance">$6.00</p>
+        <a href="">Manage Balance</a>
+      </div>
+      <ul class="list-group">
+        <button class="list-group-item" id="home-tab-btn"><i class="fa fa-home mr-2"></i> Home</button>
+        <button class="list-group-item" id="search-tab-btn"><i class="fa fa-search mr-2"></i> Search</button>
+        <button class="list-group-item" id="payments-tab-btn"><i class="fa fa-spinner mr-2"></i> Incomplete</button>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" id="main-content">
+    <div id="home-tab">
+      <h1>This is the home page.</h1>
+    </div>
+    <div style="display: none;" id="search-tab">
+      <h1>This is the search page.</h1>
+    </div>
+    <div style="display: none;" id="payments-tab">
+      <h1>This is the payments page.</h1>
+    </div>
+
+  </div>
+
+  <div class="from-bottom hidden" id="newpayment">
+    <nav class="py-3">
+      <a id="cancel-newpayment-btn" class="nav-link" style="float: left;">Cancel</a>
+      <h5 style="width: 100%; text-align: center;">Add Recipients</h5>
+    </nav>
+    <input type="text" id="person-search-inp" placeholder="Name, @username, phone, or email">
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="ui.js"></script>
+</body>
+
+</html>
