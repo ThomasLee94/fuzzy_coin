@@ -107,7 +107,7 @@ contract FuzzyCoin {
      * - `to` cannot be the zero address.
      * - WILL BE USED FOR TESTING PURPOSES
      */
-  function _mint(address account, uint256 amount) internal {
+  function _mint(address account, uint256 amount) public {
         require(account != address(0), "ERC20: mint to the zero address");
 
         _totalSupply = _totalSupply.add(amount);
@@ -126,7 +126,7 @@ contract FuzzyCoin {
      * - `account` cannot be the zero address.
      * - `account` must have at least `amount` tokens.
      */
-    function _burn(address account, uint256 value) internal {
+    function _burn(address account, uint256 value) public {
         require(account != address(0), "ERC20: burn from the zero address");
 
         _totalSupply = _totalSupply.sub(value);

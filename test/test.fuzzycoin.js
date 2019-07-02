@@ -35,8 +35,7 @@ contract('DDollar', async function (accounts) {
     // normal transfers without approvals
     it('BALANCE: should return total number of Fuzzy Coins (0)', async () => {
       const totalSupply = await ddollarInstance.totalSupply();
-      console.log(totalSupply.toString(10))
-      console.log("I AM HERE IN Balance check")
+  
       assert(
         totalSupply.toString(10) === '0',
         "message"
@@ -44,16 +43,17 @@ contract('DDollar', async function (accounts) {
     });
 
     it('BALANCE: should return the balance of tokens at a given public address', async () => {
-      const mockAddress = 1234;
-      const mockAmount = 20;
-      await ddollarInstance._mint(mockAddress, mockAmount);
-      const balance = await ddollarInstance.balanceOf()
+      
+      await ddollarInstance._mint(accounts[0], 20);
+      const balance = await ddollarInstance.balanceOf(accounts[0])
+      console.log("this is THE BALANCE!!!")
+      console.log(balance.toString(10))
 
       assert(
-        balance === mockAmount
+        balance.toString(10) === '20'
       )
 
-      await ddollarInstance._burn(mockAddress, mockAmount)
+      await ddollarInstance._burn(accounts[0], 20)
       
     });
 
