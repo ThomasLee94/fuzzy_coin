@@ -26,8 +26,7 @@ contract('DDollar', async function (accounts) {
 
     it('Sanity check', async () => {
       assert(
-        true === true,
-        'this is true'
+        true === true
       )
     });
 
@@ -37,8 +36,7 @@ contract('DDollar', async function (accounts) {
       const totalSupply = await ddollarInstance.totalSupply();
   
       assert(
-        totalSupply.toString(10) === '0',
-        "message"
+        totalSupply.toString(10) === '0'
       )  
     });
 
