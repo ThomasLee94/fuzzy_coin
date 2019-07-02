@@ -18,15 +18,16 @@
 
   <!-- HEADER -->
   <nav class="navbar navbar-expand-md navbar-dark bg-primary pr-0">
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#sidebar"
-      aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fa fa-bars"></i>
+    <button class="btn btn-outline" type="button" id="sidebar-toggle" title="Toggle Sidebar">
+      <i class="fa fa-bars text-light"></i>
     </button>
-    <button class="btn text-white btn-lg" id="new-payment-btn"><i class="fa fa-pencil-square-o"></i></button>
+    <button class="btn text-white btn-lg" id="new-payment-btn">
+      <i class="fa fa-pencil-square-o"></i>
+    </button>
 
     <!-- SIDEBAR -->
-    <div class="collapse navbar-collapse" id="sidebar">
-      <div class="img-container bg-light">
+    <div class="bg-light hide" id="sidebar">
+      <div class="img-container border">
         <img src="" alt="" class="profile">
         <h3 id="user-name">Ikey Benzaken</h3>
         <h4 class="text-muted" id="user-id">@ikey-benzaken</h4>
@@ -43,6 +44,7 @@
     </div>
   </nav>
 
+  <!-- MAIN SCREENS -->
   <div class="container" id="main-content">
     <div id="home-tab">
       <h1>This is the home page.</h1>
@@ -56,12 +58,25 @@
 
   </div>
 
+  <!-- NEW PAYMENT SCREEN -->
   <div class="from-bottom hidden" id="newpayment">
-    <nav class="py-3">
-      <a id="cancel-newpayment-btn" class="nav-link" style="float: left;">Cancel</a>
-      <h5 style="width: 100%; text-align: center;">Add Recipients</h5>
-    </nav>
-    <input type="text" id="person-search-inp" placeholder="Name, @username, phone, or email">
+    <!-- User Search -->
+    <div>
+      <nav class="py-3">
+        <a id="cancel-newpayment-btn" class="nav-link" style="float: left;">Cancel</a>
+        <h5 style="width: 100%; text-align: center;">Add Recipients</h5>
+      </nav>
+      <div class="input-group">
+        <input type="text" class="form-control" id="person-search-inp" placeholder="Name, @username, phone, or email">
+        <div class="input-group-append">
+          <button class="btn btn-outline-primary" type="button" id="payment-next-btn">Next</button>
+        </div>
+      </div>
+      <ul class="list-group" id="users"></ul>
+    </div>
+
+    <!-- New Payment -->
+
   </div>
 
 
@@ -76,6 +91,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <script
+    src="https://raw.githubusercontent.com/selectize/selectize.js/master/dist/js/standalone/selectize.min.js"></script>
   <script src="ui.js"></script>
 </body>
 

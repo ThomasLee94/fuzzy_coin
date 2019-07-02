@@ -1,5 +1,5 @@
 body { overflow: hidden }
-.collapse {
+#sidebar {
   position: fixed;
   height: 100vh;
   top: 0px;
@@ -8,6 +8,7 @@ body { overflow: hidden }
   margin: auto;
   transition: all ease 0.25s;
 }
+#sidebar.hide { transform: translateX(-100%) }
 
 .img-container {
   width: 100%;
@@ -19,7 +20,6 @@ body { overflow: hidden }
 }
 
 .list-group-item { text-align: left }
-.collapse.show { transform: translateX(0) }
 
 img.profile {
   width: 100px;
@@ -39,11 +39,16 @@ img.profile {
   background-color: white;
   transition: all ease 0.25s;
 }
-
-.from-bottom.hidden { transform: translateY(100%) }
-
-#person-search-inp {
+.hide-right {
   width: 100vw;
-  padding: 12px;
-  border: 0.5px solid lightgray;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: white;
+  transition: all ease 0.25s;
 }
+.hide-right.hidden { transform: translateX(100%) }
+.from-bottom.hidden { transform: translateY(100%) }
+.fa-user-circle { font-size: 1.2em; }

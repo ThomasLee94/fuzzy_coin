@@ -10,6 +10,12 @@ $(document).ready(function () {
   // User search
   $('#person-search-inp').keypress(findPeopleFromSearch);
 
+  // Sidebar toggle
+  $('#sidebar-toggle').click(() => $('#sidebar').toggleClass('hide'));
+
+  $('#payment-next-btn').click(() => $('#payment-create-page').toggleClass('hidden'));
+  $('#cancel-payment-btn').click(() => $('#payment-create-page').toggleClass('hidden'));
+
 });
 
 function toggleTabs() {
@@ -21,7 +27,7 @@ function toggleTabs() {
   $(`#${pageID}`).show();
 
   // Hide sidebar:
-  $('#sidebar').toggleClass('show');
+  $('#sidebar').toggleClass('hide');
 }
 
 function toggleCreatePaymentPage() {
@@ -30,5 +36,9 @@ function toggleCreatePaymentPage() {
 
 function findPeopleFromSearch() {
   const searchTerm = $(this).val();
-  // TODO: Implement logic to search for users
+  // TODO: Implement logic to search for users:
+  // Use contract to find people from search term
+  // Display users:
+
+
 }
