@@ -46,8 +46,6 @@ contract('DDollar', async function (accounts) {
       
       await ddollarInstance._mint(accounts[0], 20);
       const balance = await ddollarInstance.balanceOf(accounts[0])
-      console.log("this is THE BALANCE!!!")
-      console.log(balance.toString(10))
 
       assert(
         balance.toString(10) === '20'
@@ -57,12 +55,15 @@ contract('DDollar', async function (accounts) {
       
     });
 
-    it('TRANSFERS: should transfer 10000 to accounts[1] from accounts[0] containing 10000', async () => {
-      await ddollarInstance.transfer(accounts[1], 10000, { from: accounts[0] });
+    it('TRANSFERS: should transfer 10 to accounts[1] from accounts[0] containing 10', async () => {
+      await ddollarInstance._mint(accounts[0], 10);
+      await ddollarInstance.transfer(accounts[1], 10, { from: accounts[0] });
       const balance = await ddollarInstance.balanceOf.call(accounts[1]);
-      assert.strictEqual(
-        balance.toNumber(), 10000
+      assert(
+        balance.toString(10) === '10'
         );
+
+        await ddollarInstance._burn(accounts[1], 10)
     });
 
     it('TRANSFERS: should fail when trying to transfer 10001 to accounts[1] with accounts[0] having 10000', async () => {
