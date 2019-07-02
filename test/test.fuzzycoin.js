@@ -11,13 +11,15 @@ contract('DDollar', async function (accounts) {
     (async () => {
       try {
         // Deploy Ddollar.sol
+        // init with supply of 0
+        ddollarInstance = await Ddollar.new(0);
         ddollarInstance = await Ddollar.deployed();
         done()
       } catch (error){
         console.log(error);
         done(false)
       }
-    })
+    })();
   })
   
   describe("Ddollar.sol", function () {
@@ -31,11 +33,12 @@ contract('DDollar', async function (accounts) {
 
     // TRANSFERS & BALANCE
     // normal transfers without approvals
-    it('BALANCE: should return total number of Fuzzy Coins (1000000)', async () => {
+    it('BALANCE: should return total number of Fuzzy Coins (0)', async () => {
       const totalSupply = await ddollarInstance.totalSupply();
-  
+      console.log(totalSupply.toString(10))
       assert(
-        totalSupply === 1000000
+        totalSupply.toString(10) === '0',
+        "message"
       )  
     });
 

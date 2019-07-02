@@ -9,7 +9,7 @@ contract FuzzyCoin {
   string public constant name = "Ddollar";
   string public constant symbol = "DDLR";
   uint8 public constant decimals = 18;
-  uint256 _totalSupply = 1000000;
+  uint256 _totalSupply = 0;
 
   // TODO: Should balances be public?
 	mapping (address => uint) balances;
@@ -113,6 +113,25 @@ contract FuzzyCoin {
         _totalSupply = _totalSupply.add(amount);
         balances[account] = balances[account].add(amount);
         emit Transfer(address(0), account, amount);
+    }
+
+    /**
+     * Destoys `amount` tokens from `account`, reducing the
+     * total supply.
+     *
+     * Emits a `Transfer` event with `to` set to the zero address.
+     *
+     * Requirements
+     *
+     * - `account` cannot be the zero address.
+     * - `account` must have at least `amount` tokens.
+     */
+    function _burn(address account, uint256 value) internal {
+        require(account != address(0), "ERC20: burn from the zero address");
+
+        _totalSupply = _totalSupply.sub(value);
+        balances[account] = balances[account].sub(value);
+        emit Transfer(account, address(0), value);
     }
 
 }
