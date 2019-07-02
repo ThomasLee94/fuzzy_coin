@@ -1,5 +1,5 @@
 
-const Ddollar = artifacts.require("FuzzyCoin.sol");
+const Ddollar = artifacts.require("Ddollar.sol");
 // Courtesy of @maurelian
 const { assertRevert } = require('./helper/assertRevert');
 
