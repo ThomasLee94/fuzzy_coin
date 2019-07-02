@@ -36,6 +36,7 @@ contract('DDollar', async function (accounts) {
     it('BALANCE: should return total number of Fuzzy Coins (0)', async () => {
       const totalSupply = await ddollarInstance.totalSupply();
       console.log(totalSupply.toString(10))
+      console.log("I AM HERE IN Balance check")
       assert(
         totalSupply.toString(10) === '0',
         "message"
@@ -51,6 +52,8 @@ contract('DDollar', async function (accounts) {
       assert(
         balance === mockAmount
       )
+
+      await ddollarInstance._burn(mockAddress, mockAmount)
       
     });
 
