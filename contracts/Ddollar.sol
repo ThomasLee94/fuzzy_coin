@@ -16,7 +16,7 @@ contract Ddollar {
   mapping (address => mapping (address => uint256)) allowed;
   mapping (address => string) username;
   mapping (string => address) adresses;
-  // TODO: transaction history? 
+  // TODO: transaction history?
 
   event Transfer(address indexed from, address indexed to, uint256 tokens);
   event Approval(address indexed owner, address indexed spender, uint tokens);

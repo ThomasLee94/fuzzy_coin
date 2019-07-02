@@ -1,18 +1,26 @@
 var HDWalletProvider = require("truffle-hdwallet-provider");
 var infura_apikey = "KbQuP7xkP1ZYNhJkUOXF"; // Either use this key or get yours at https://infura.io/signup. It's free.
-var mnemonic = process.env.MNEMONIC;
+var mnemonic = "into bacon choose sleep ridge voyage sorry carbon similar borrow victory autumn";
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
   // to customize your Truffle configuration!
+
   networks: {
     ganache: {
-      host: "localhost",
+      provider() {
+        return new HDWalletProvider(
+          process.env.GANACHE_MNEMONIC,
+          'http://localhost:7545'
+        )
+      },
+      host: 'localhost',
       port: 7545,
-      gas: 6500000,
-      network_id: "5777"
+      network_id: 5777,
+      gas: 10000000,
+      gasPrice: 1000000000
     },
-    ropsten:  {
+    ropsten: {
       provider: new HDWalletProvider(mnemonic, "https://ropsten.infura.io/" + infura_apikey),
       network_id: 3,
       gas: 4500000

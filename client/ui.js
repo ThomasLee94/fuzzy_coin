@@ -8,13 +8,15 @@ $(document).ready(function () {
   $('#cancel-newpayment-btn').click(toggleCreatePaymentPage);
 
   // User search
-  $('#person-search-inp').keypress(findPeopleFromSearch);
+  // $('#person-search-inp').keypress(findPeopleFromSearch);
 
   // Sidebar toggle
   $('#sidebar-toggle').click(() => $('#sidebar').toggleClass('hide'));
 
   $('#payment-next-btn').click(() => $('#payment-create-page').toggleClass('hidden'));
   $('#cancel-payment-btn').click(() => $('#payment-create-page').toggleClass('hidden'));
+
+  $('#send-btn').click(handleTransaction);
 
 });
 
@@ -34,11 +36,12 @@ function toggleCreatePaymentPage() {
   $('.from-bottom').toggleClass('hidden');
 }
 
-function findPeopleFromSearch() {
-  const searchTerm = $(this).val();
-  // TODO: Implement logic to search for users:
-  // Use contract to find people from search term
-  // Display users:
+function handleTransaction() {
+  const recipientAddress = $('#recieving-wallet-address').val();
+  const amountSending = $('#num-ddollars').val();
 
+  contract.transfer(recipientAddress, amountSending).then(() => {
+    alert('Transfer completed.');
+  }).catch(alert);
 
 }

@@ -49,6 +49,7 @@ img.profile {
   background-color: white;
   transition: all ease 0.25s;
 }
+#manage-balance-screen.hidden { display: none; }
 .hide-right.hidden { transform: translateX(100%) }
 .from-bottom.hidden { transform: translateY(100%) }
 .fa-user-circle { font-size: 1.2em; }
